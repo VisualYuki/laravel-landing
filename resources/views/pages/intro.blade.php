@@ -8,46 +8,21 @@
 <section class="slider">
     <div class="container">
         <div class="slider__inner">
-            <div class="slider__item">
-                <div class="slider__item-content">
-                    <div class="slider__title">
-                        КОМПЛЕКСНОЕ ЗАКРЫТИЕ ПРЕДПРИЯТИЯ
+            @foreach( $sliderInfo  as $sliderItem)
+                <div class="slider__item">
+                    <div class="slider__item-content">
+                        <div class="slider__title">
+                            {{$sliderItem->title}}
+                        </div>
+                        <div class="slider__text">
+                            {{$sliderItem->text}}
+                        </div>
+                        <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
+                            Оставить заявку
+                        </a>
                     </div>
-                    <div class="slider__text">
-                        Полное прекращение существования юридического лица с сохранением легальности всей предыдущей деятельности.
-                    </div>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
-                        Оставить заявку
-                    </a>
                 </div>
-            </div>
-            <div class="slider__item">
-                <div class="slider__item-content">
-                    <div class="slider__title">
-                        КОМПЛЕКСНОЕ ЗАКРЫТИЕ ПРЕДПРИЯТИЯ
-                    </div>
-                    <div class="slider__text">
-                        Полное прекращение существования юридического лица с сохранением легальности всей предыдущей деятельности.
-                    </div>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
-                        Оставить заявку
-                    </a>
-                </div>
-            </div>
-            <div class="slider__item">
-                <div class="slider__item-content">
-                    <div class="slider__title">
-                        КОМПЛЕКСНОЕ ЗАКРЫТИЕ ПРЕДПРИЯТИЯ
-                    </div>
-                    <div class="slider__text">
-                        Полное прекращение существования юридического лица с сохранением легальности всей предыдущей деятельности.
-                    </div>
-                    <a data-fancybox data-src="#modal" href="javascript:;" class="slider__btn default-btn">
-                        Оставить заявку
-                    </a>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </section>

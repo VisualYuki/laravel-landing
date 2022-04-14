@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactsController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('pages/intro', ["payload" => "hello from routes/web"]);
-});
+//Route::get('/', function () {
+//
+//    return view('pages/intro', ["payload" => "hello from routes/web"]);
+//});
+
+Route::get('/', "IntroPageController@index");
 
 //Route::get('/about', function () {
 //	return view('pages/about');
@@ -24,9 +28,7 @@ Route::get('/', function () {
 
 Route::view("/about", "pages.about");
 
-Route::get('/services', function () {
-    return view('pages/services');
-})->name("services");
+Route::get('/services', "ServicesPageController@index")->name("services");
 
 Route::get('/form', function () {
     return view('pages/form');
@@ -37,7 +39,7 @@ Route::post('/form', function (Request $request) {
     return view('pages/form-success');
 });
 
-Route::get('/advantages', "FirstController@index");
+Route::get('/advantages', [ContactsController::class, "index"]);
 
 Route::redirect('/redirect-news', '/news');
 
